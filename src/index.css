@@ -13,7 +13,6 @@ body {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 }
 
 code {
@@ -25,4 +24,5 @@ code {
 	width: 100%;
 	max-width: 720px;
 	margin: 0 24px;
+	margin-top: 80px;
 }

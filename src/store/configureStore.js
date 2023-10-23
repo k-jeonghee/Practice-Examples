@@ -1,14 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import sectionSlice from "../reducers/sectionSlice";
-import todoSlice from "../reducers/todoSlice";
-import counterSlice from "../reducers/counterSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import orderSlice from '../orderSlice';
 
 const store = configureStore({
-  reducer: {
-    section: sectionSlice.reducer,
-    todo: todoSlice.reducer,
-    counter: counterSlice.reducer,
-  },
+	reducer: {
+		order: orderSlice.reducer,
+	},
 });
 
 export default store;
