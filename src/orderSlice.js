@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 
 const initialState = [
 	{
@@ -15,6 +16,16 @@ const initialState = [
 		id: 3,
 		name: '타코 🌮',
 		isCompleted: true,
+	},
+	{
+		id: 4,
+		name: '타코 🌮',
+		isCompleted: false,
+	},
+	{
+		id: 5,
+		name: '타코 🌮',
+		isCompleted: false,
 	},
 ];
 
