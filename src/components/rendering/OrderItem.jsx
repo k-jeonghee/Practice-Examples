@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import orderSlice from '../../orderSlice';
+import orderSlice from '../../reducers/orderSlice';
 import { useDispatch } from 'react-redux';
 
 const OrderItem = ({ order }) => {

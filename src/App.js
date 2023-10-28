@@ -2,10 +2,8 @@ import React from 'react';
 import Form from './components/rendering/Form';
 import OrderItem from './components/rendering/OrderItem';
 import { useSelector } from 'react-redux';
-import orderSlice from './orderSlice';
 import { createSelector } from '@reduxjs/toolkit';
 import Filter from './components/rendering/Filter';
-import { StatusFilters } from './filterSlice';
 
 const getFilteredList = (orders, filter) => {
 	console.log('getFilteredList');
@@ -70,8 +68,8 @@ function App() {
 	return (
 		<>
 			<Form />
-			{/* <Filter status={filter} onChange={setFilter} /> */}
 			<Filter />
+
 			<ul className="border border-gray-100 p-4">
 				{orders.map((order) => (
 					<OrderItem key={order.id} order={order} />

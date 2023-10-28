@@ -1,6 +1,6 @@
 import React, { memo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import orderSlice from '../../orderSlice';
+import orderSlice from '../../reducers/orderSlice';
 
 const Form = () => {
 	console.log('Form Render');

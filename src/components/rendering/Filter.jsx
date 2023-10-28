@@ -31,13 +31,14 @@
 // export default Filter;
 
 import React, { memo } from 'react';
-import { StatusFilters, statusFilterChanged } from '../../filterSlice';
+import { StatusFilters, statusFilterChanged } from '../../reducers/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Filter = () => {
 	console.log('Filter Render');
 	const status = useSelector((state) => state.filter.status);
 	const dispatch = useDispatch();
+
 	const renderedFilters = Object.keys(StatusFilters).map((key) => {
 		const value = StatusFilters[key];
 		const handleClick = () => dispatch(statusFilterChanged(value));

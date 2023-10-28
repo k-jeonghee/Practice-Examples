@@ -1,10 +1,15 @@
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import todoSlice from '../reducers/todoSlice';
+import todoSlice from '../../todoSlice';
 
-const TodoItem = ({ todo }) => {
+const selectTodoById = (state, todoId) => {
+	return state.todo.find((todo) => todo.id === todoId);
+};
+
+const TodoItem = ({ todoId }) => {
 	console.log('TodoItem Render');
 	const dispatch = useDispatch();
+	const todo = useSelector((state) => selectTodoById(state, todoId));
 
 	const handleChange = (e) => {
 		const { id, checked } = e.target;
@@ -30,4 +35,4 @@ const TodoItem = ({ todo }) => {
 	);
 };
 
-export default memo(TodoItem);
+export default TodoItem;

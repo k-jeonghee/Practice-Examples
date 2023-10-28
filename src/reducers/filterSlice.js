@@ -10,7 +10,7 @@ const initialState = {
 	status: StatusFilters.All,
 };
 
-const filterslice = createSlice({
+const filterSlice = createSlice({
 	name: 'filter',
 	initialState,
 	reducers: {
@@ -21,6 +21,6 @@ const filterslice = createSlice({
 		},
 	},
 });
-export default filterslice;
+export default filterSlice;
 
-export const { statusFilterChanged } = filterslice.actions;
+export const { statusFilterChanged } = filterSlice.actions;
