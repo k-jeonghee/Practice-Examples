@@ -1,11 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { getAllCountries } from '../api/country';
+import { getAllCountries } from '../../api/country';
+import { useQuery } from '@tanstack/react-query';
 
 const Country = () => {
-	const { data, isLoading, error } = useQuery(['country'], getAllCountries, {
-		staleTime: 3000,
-	});
+	const { data, isLoading, error } = useQuery(['country'], getAllCountries);
 	console.log(data);
 	return (
 		<>
