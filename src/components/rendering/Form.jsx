@@ -10,15 +10,12 @@ const Form = () => {
 		setText(e.target.value);
 	};
 
-	const nextId = useRef(4);
 	const handleCreate = () => {
 		const newOrder = {
-			id: nextId.current,
 			name: text,
 			isCompleted: false,
 		};
 		dispatch(orderSlice.actions.create(newOrder));
-		nextId.current += 1;
 		setText('');
 	};
 
