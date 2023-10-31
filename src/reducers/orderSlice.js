@@ -1,5 +1,6 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
+import { v4 as uuid } from 'uuid';
 
 const initialState = [
 	{
@@ -17,16 +18,6 @@ const initialState = [
 		name: '타코 🌮',
 		isCompleted: true,
 	},
-	{
-		id: 4,
-		name: '타코 🌮',
-		isCompleted: false,
-	},
-	{
-		id: 5,
-		name: '타코 🌮',
-		isCompleted: false,
-	},
 ];
 
 const orderSlice = createSlice({
@@ -34,7 +25,10 @@ const orderSlice = createSlice({
 	initialState,
 	reducers: {
 		create: (state, action) => {
-			state.push(action.payload);
+			state.push({
+				...action.payload,
+				id: uuid(),
+			});
 		},
 		update: (state, action) => {
 			return state.map((v) =>
